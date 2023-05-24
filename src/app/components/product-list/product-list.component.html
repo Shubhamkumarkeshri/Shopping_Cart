@@ -1,0 +1,40 @@
+<div class="search-box">
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Search"
+      type="text"
+      autocomplete="off"
+      (input)="search($event.target)"
+    />
+  </mat-form-field>
+</div>
+
+<!-- appearance="outline" -->
+
+<div class="product-container" *ngIf="products.length > 0; else NoItemFound">
+  <div class="product" *ngFor="let item of products">
+    <div class="image">
+      <img src="{{ item.image }}" alt="Product Image" />
+    </div>
+    <div class="details">
+      <h3>{{ item.name }}</h3>
+      <p>{{ item.description }}</p>
+      <p class="price">₹{{ item.price | number }}</p>
+      <button mat-raised-button color="primary" (click)="addToCart(item)">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+</div>
+
+<ng-template #NoItemFound>
+  <div class="no-data-found-container">
+    <img src="/assets/images/no-item-found.svg" alt="No data found" />
+    <p>No data found.</p>
+  </div>
+</ng-template>
+
+<!-- Badge -->
+<!-- Snack bar -->
+<!-- UI -->

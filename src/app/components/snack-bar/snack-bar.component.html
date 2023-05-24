@@ -1,0 +1,36 @@
+<div class="custom-snackbar">
+    <div class="custom-snackbar__message">
+      <span
+          class="custom-snackbar__message--icon"
+          *ngIf="data.type === notificationType.Success"
+        >
+          <mat-icon class="colored__green"
+            >check_circle</mat-icon
+          >
+        </span>
+        <span
+          class="custom-snackbar__message--icon"
+          *ngIf="data.type === notificationType.Warn"
+        >
+          <mat-icon class="colored__yellow"
+            >error_outline</mat-icon
+          >
+        </span>
+        <span
+          class="custom-snackbar__message--icon"
+          *ngIf="data.type === notificationType.Error"
+        >
+          <mat-icon class="colored__red"
+            >cancel</mat-icon
+          >
+        </span>
+      <span class="custom-snackbar__message--text">{{ data?.message }}</span>
+      <a
+        href="javascript:void(0)"
+        class="colored__locobuzz snackbar__message--action"
+        (click)="dismiss()"
+      >
+        Dismiss
+      </a>
+    </div>
+  </div>

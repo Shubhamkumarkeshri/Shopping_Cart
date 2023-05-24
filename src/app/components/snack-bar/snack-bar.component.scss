@@ -1,0 +1,53 @@
+.custom-snackbar {
+    &__message {
+      &--icon {
+        margin-right: 10px;
+      }
+  
+      &--text {
+        margin-right: 15px;
+        min-width: 20vw;
+      }
+  
+      &--action {
+        margin-left: auto;
+        cursor: pointer;
+      }
+    }
+  
+    &__actions {
+      justify-content: flex-end;
+      margin-top: 10px;
+  
+      &--trigger {
+        cursor: pointer;
+      }
+  
+      &--trigger:not(:last-child) {
+        margin-right: 15px;
+      }
+    }
+  
+    &__message,
+    &__actions {
+      display: flex;
+      align-items: center;
+    }
+  
+    a {
+      color: rgb(110, 110, 219);
+      text-decoration: none;
+    }
+  
+    .colored__green {
+      color: rgb(96, 200, 96);
+    }
+  
+    .colored__red {
+      color: rgb(206, 73, 73);
+    }
+  
+    .colored__yellow {
+      color: rgb(222, 169, 36);
+    }
+  }

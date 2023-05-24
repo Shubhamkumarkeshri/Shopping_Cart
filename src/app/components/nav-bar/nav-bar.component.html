@@ -1,0 +1,14 @@
+<nav>
+    <div class="logo">
+      <!-- Logo -->
+    </div>
+    <ul class="nav-links" [class.nav-active]="isNavActive">
+      <li><a routerLink="/" (click)="isNavActive = false">Product</a></li>
+      <li><a routerLink="/cart" (click)="isNavActive = false" [matBadge]="cartAddedCount == 0 ? '' : cartAddedCount" matBadgeColor="warn">Cart</a></li>
+    </ul>
+    <div class="menu-icon" (click)="toggleNav()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+</nav>
